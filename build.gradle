@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.doverunner'
+version = '1.0.0-SNAPSHOT'
+
+jar {
+    archiveBaseName.set("tnp-request")
+    archiveVersion.set(version)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.19.0")
+    implementation("org.slf4j:slf4j-api:2.0.16")
+    implementation("ch.qos.logback:logback-classic:1.5.16")
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+    testImplementation("org.assertj:assertj-core:3.27.3")
+}
+
+test {
+    useJUnitPlatform()
+}
